@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## About next-code-format
+- Eslint https://eslint.org/
+  - コードの品質を保つための静的解析ツール
+  - 静的 ... コードを実行せずにその構文やスタイルを分析するプロセスのこと
 
-First, run the development server:
+- Prettier https://prettier.io/
+  - コードの自動整形ツール
+  - コードの静的解析や品質チェックする機能はない
+  - コードの整形を行い一貫性を保つことに特化している
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- husky
+  - Git操作をフックにして自動化することが可能
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- パッケージ
+ - eslint-config-prettier
+   ESlintとPrettierを組み合わせた場合一部の整形ルールが競合することがあるので、Prettierと競合するESLintルールを無効化する。
+   例えば、スペースの数やセミコロンの有無などが異なる場合など。
+   これによりESLintがコードの品質を解析して、Prettierがコードを整形するという使い方が可能になり両者を共存させることができる。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## References Articles
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [2023年]Next.js + eslint周りの設定
+  https://zenn.dev/resistance_gowy/articles/91b4f62b9f48ec#commit%E6%99%82%E3%81%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%A4%9C%E8%A8%BC%E3%82%92%E3%81%99%E3%82%8B
+  
+- Next.js13.4+TypeScript+ESLint+Prettier+Huskyのよくばりセットで環境を構築してみました
+https://zenn.dev/bloomer/articles/294cf65fda277b
 
-## Learn More
+- 【Next.js】コード品質を高める環境構築手順 (TyprScript, Prettier, EsLint, Husky, GitHub Actions)
+https://musclecoding.com/nextjs-pj-template/
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
