@@ -49,7 +49,7 @@
 - [2023年]Next.js + eslint周りの設定
   https://zenn.dev/resistance_gowy/articles/91b4f62b9f48ec#commit%E6%99%82%E3%81%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%A4%9C%E8%A8%BC%E3%82%92%E3%81%99%E3%82%8B
   
--【2024/01最新】husky + lint-staged でコミット前にlintを強制する方法
+- 【2024/01最新】husky + lint-staged でコミット前にlintを強制する方法
   https://zenn.dev/risu729/articles/latest-husky-lint-staged
 
 - その他の参考記事
