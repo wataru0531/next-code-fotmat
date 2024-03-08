@@ -1,13 +1,18 @@
 
 
-// lint-staged の設定
-// → commit時に下の処理が走るようにする
+// lint-staged の設定ファウル
+// → commit → huskyのpre-commitファイル > npx lint-staged が発火
+// → この .lintstagedrc.jsファイル が実行される
+// → ESLint、Prettierが実行される
+
 // package.jsonに普通に記述したらエラーになる
 
 const path = require('path')
 
 
-// .ts, tsxファイルに対して、next lintと prettier --write を行ってくれる
+// ESLintコマンとをビルドするための関数
+// next lint ... Next.jsプロジェクトでESLintを実行するためのコマンド
+// → Next.js プロジェクト内に存在する.eslintrc.jsや.eslintrc.json、または .eslintignore ファイルを参照して、静的解析を行う
 const buildEslintCommand = (filenames) =>
   `next lint --fix --file ${filenames
     .map((f) => path.relative(process.cwd(), f))
@@ -18,12 +23,12 @@ module.exports = {
   '*.{ts,tsx}': [
     () => 'tsc --incremental false --noEmit', // tscのコンパイルの検証の設定
     buildEslintCommand,
-    "prettier --write"
+    "prettier --write" // Prettierでコードの整形を実行
   ],
 }
 
-// incremental
-// → コンパイラは前回のビルドから変更されたファイルのみをコンパイルし、ビルド速度を大幅に向上させることができるオプション
+// incremental false 
+// → インクリメンタルビルドを無効にし、毎回全てのファイルを再コンパイルすることを指定する
 
 // noEmitオプション
 // → コンパイラにコードの型チェックを実行するように指示する

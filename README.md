@@ -1,6 +1,13 @@
 
 ## About next-code-format
-- Eslint https://eslint.org/
+- コードフォーマットが発火するまでの流れ
+  - コミット
+  - huskyのpre-commitファイル > npx lint-staged が発火
+  - .lintstagedrc.js が実行される
+  - ESLint、Prettierが実行される(ステージングされたファイルのみ)
+
+
+- EsLint https://eslint.org/
   - コードの品質を保つための静的解析ツール
   - 静的 ... コードを実行せずにその構文やスタイルを分析するプロセスのこと
 
@@ -24,19 +31,18 @@
 - .husky/pre-commit ファイル
   - Gitフックの1つであり、Git コミットが実行される前に実行されるスクリプトを定義
 
-
 - パッケージ
   - eslint-config-prettier
     ESlintとPrettierを組み合わせた場合一部の整形ルールが競合することがあるので、Prettierと競合するESLintルールを無効化する。
     例えば、スペースの数やセミコロンの有無などが異なる場合など。
     これによりESLintがコードの品質を解析して、Prettierがコードを整形するという使い方が可能になり両者を共存させることができる。
   
--あったらいいパッケージ
+- 推奨パッケージ 
   - eslint-plugin-import → import、exportの並び替え
 
-- VS Codeの拡張機能
+- VSCodeの拡張機能
   - prettier-plugin-tailwindcss
-  - Prettier - Code formatter
+    推奨されるクラス順に並び替えてくれる
 
 ## References Articles
 
