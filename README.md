@@ -26,17 +26,17 @@
 
 
 - パッケージ
- - eslint-config-prettier
-   ESlintとPrettierを組み合わせた場合一部の整形ルールが競合することがあるので、Prettierと競合するESLintルールを無効化する。
-   例えば、スペースの数やセミコロンの有無などが異なる場合など。
-   これによりESLintがコードの品質を解析して、Prettierがコードを整形するという使い方が可能になり両者を共存させることができる。
+  - eslint-config-prettier
+    ESlintとPrettierを組み合わせた場合一部の整形ルールが競合することがあるので、Prettierと競合するESLintルールを無効化する。
+    例えば、スペースの数やセミコロンの有無などが異なる場合など。
+    これによりESLintがコードの品質を解析して、Prettierがコードを整形するという使い方が可能になり両者を共存させることができる。
   
 -あったらいいパッケージ
- - eslint-plugin-import → import、exportの並び替えnarabikae
+  - eslint-plugin-import → import、exportの並び替え
 
 - VS Codeの拡張機能
- - prettier-plugin-tailwindcss
- - Prettier - Code formatter
+  - prettier-plugin-tailwindcss
+  - Prettier - Code formatter
 
 ## References Articles
 
