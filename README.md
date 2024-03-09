@@ -1,20 +1,30 @@
 
 ## About next-code-format
+- そもそもなぜESLint、Prettierによるコードの解析・整形が必要なのか？
+  - コードの品質向上
+  - 一貫性の確保
+  - バグの早期発見
+  - 作業効率の向上
+  - チームでの開発が容易になる
+
 - コードフォーマットが発火するまでの流れ
   - コミット
-  - huskyのpre-commitファイル > npx lint-staged が発火
+  - huskyのpre-commitファイル → npx lint-staged が発火
   - .lintstagedrc.js が実行される
   - ESLint、Prettierが実行される(ステージングされたファイルのみ)
 
-
 - EsLint https://eslint.org/
   - コードの品質を保つための静的解析ツール
-  - 静的 ... コードを実行せずにその構文やスタイルを分析するプロセスのこと
+  - 静的解析 ... コードを実行せずにその構文やスタイルを分析するプロセスのこと
+  - コードフォーマットに関するルールも含まれている(eslint-config-prettierでオフにする)
+  - 設定ファイルは、JavaScript, YAML, JSON, package.jsonのeslintConfigプロパティという選択肢があるが、.eslintrc.jsで記述(コメントの記入が可能、共通変数の定義、関数かも可能。推奨)
 
 - Prettier https://prettier.io/
   - コードの自動整形ツール
   - コードの静的解析や品質チェックする機能はない
   - コードの整形を行い一貫性を保つことに特化している
+  - 設定ファイルは、prettier.config.js。(推奨)
+
 
 - Husky
   - Gitフックを管理するためのツール
@@ -52,6 +62,9 @@
 - 【2024/01最新】husky + lint-staged でコミット前にlintを強制する方法
   https://zenn.dev/risu729/articles/latest-husky-lint-staged
 
+- ESLint を使い倒す（おすすめルール紹介）
+  https://zenn.dev/noshiro_piko/articles/take-full-advantage-of-typescript-eslint
+  
 - その他の参考記事
 https://typicode.github.io/husky/get-started.html#install
 

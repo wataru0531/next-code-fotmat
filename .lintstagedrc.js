@@ -1,6 +1,7 @@
 
 
-// lint-staged の設定ファウル
+// lint-staged の設定ファイル
+
 // → commit → huskyのpre-commitファイル > npx lint-staged が発火
 // → この .lintstagedrc.jsファイル が実行される
 // → ESLint、Prettierが実行される
